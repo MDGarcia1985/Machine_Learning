@@ -61,6 +61,7 @@ def select_model_features(df: pd.DataFrame, feature_columns: List[str]) -> pd.Da
 
     return df[feature_columns].copy()
 
+
 def build_feature_matrix(
     df: pd.DataFrame,
     feature_columns: List[str],

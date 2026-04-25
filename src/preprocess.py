@@ -46,6 +46,7 @@ def load_data(file_path: str) -> pd.DataFrame:
     except FileNotFoundError:
         raise FileNotFoundError(f"Data file not found: {file_path}")
 
+
 def select_columns(df: pd.DataFrame, required_columns: List[str]) -> pd.DataFrame:
     """
     Select only the required columns for preprocessing.
@@ -78,6 +79,7 @@ REQUIRED_COLUMNS = [
     "WingArea",
     "MaxSpeed",
 ]
+
 
 def clean_numeric_data(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -129,6 +131,7 @@ def clean_numeric_data(df: pd.DataFrame) -> pd.DataFrame:
 
     return df
 
+
 def clean_missing_rows(df: pd.DataFrame) -> pd.DataFrame:
     """
     Remove rows missing critical values required for feature engineering.
@@ -161,6 +164,7 @@ def clean_missing_rows(df: pd.DataFrame) -> pd.DataFrame:
 
     return df
 
+
 def engineer_features(df: pd.DataFrame) -> pd.DataFrame:
     """
     Create derived features from cleaned aircraft data.
@@ -182,6 +186,7 @@ def engineer_features(df: pd.DataFrame) -> pd.DataFrame:
         pd.DataFrame: DataFrame with engineered feature columns added.
     """
     df=df.copy()
+
 
     df["AspectRatio"] = (df["Wingspan"]**2) / df["WingArea"]
     df["SizeIndex"] = df["Length"] * df["Wingspan"]

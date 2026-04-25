@@ -736,3 +736,58 @@ Expected feature columns:
 
 --------------------------------------------------
 
+Test: 24
+Date: 03/24/2026
+Time: 10:33
+
+Results:
+python -m tests.test_train
+
+Model saved to models/model.pkl
+
+Loaded model artifact keys:
+['model', 'scaler', 'feature_columns']
+Training Pipeline Sniff Test
+
+Feature matrix shape: (201, 9)
+Target vector shape: (201,)
+
+Missing values in X:
+Crew               0
+Length             0
+Wingspan           0
+Height             0
+WingArea           0
+MaxSpeed           0
+AspectRatio        0
+SizeIndex          0
+NumberBuilt_log    0
+dtype: int64
+
+Train/Test split:
+X_train: (160, 9)
+X_test: (41, 9)
+y_train: (160,)
+y_test: (41,)
+
+Accuracy:
+0.9024390243902439
+
+Classification Report:
+              precision    recall  f1-score   support
+
+      Bomber       0.89      0.89      0.89        19
+     Fighter       0.91      0.91      0.91        22
+
+    accuracy                           0.90        41
+   macro avg       0.90      0.90      0.90        41
+weighted avg       0.90      0.90      0.90        41
+
+
+Confusion Matrix:
+[[17  2]
+ [ 2 20]]
+
+
+--------------------------------------------------
+

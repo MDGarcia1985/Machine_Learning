@@ -791,3 +791,115 @@ Confusion Matrix:
 
 --------------------------------------------------
 
+Test: 25
+Date: 04/30/2026
+Time: 21:19
+
+Results:
+python -m tests.test_preprocess
+Preprocess Sniff Test
+      Name              PrimaryRole RoleClass  NumberBuilt  AspectRatio  SizeIndex  NumberBuilt_log
+0      130                 Seaplane     Other        125.0     6.706838   180.8000         4.836282
+1      143            Medium Bomber    Bomber        138.0     6.017209   447.4272         4.934474
+2     2MB1             Light Bomber    Bomber         48.0     3.650667   148.0000         3.891820
+3     2MR8  Reconnaissance Aircraft     Other        234.0     6.252404   108.6300         5.459586
+4  351/354            Medium Bomber    Bomber         86.0     7.779237   331.0350         4.465908
+
+Missing Values Summary:
+Name               0
+PrimaryRole        0
+Number             1
+Crew               0
+Length             0
+Wingspan           0
+Height             0
+WingArea           0
+MaxSpeed           0
+NumberBuilt        1
+AspectRatio        0
+SizeIndex          0
+NumberBuilt_log    1
+RoleClass          0
+dtype: int64
+
+Row count after cleanup: 326
+
+RoleClass counts:
+RoleClass
+Other      124
+Fighter    106
+Bomber      96
+Name: count, dtype: int64
+
+Role mapping sniff test:
+               PrimaryRole RoleClass
+0                 Seaplane     Other
+1            Medium Bomber    Bomber
+2             Light Bomber    Bomber
+3  Reconnaissance Aircraft     Other
+4            Medium Bomber    Bomber
+5   Ground Attack Aircraft     Other
+6            Medium Bomber    Bomber
+7            Medium Bomber    Bomber
+8            Medium Bomber    Bomber
+9              Dive Bomber    Bomber
+
+
+--------------------------------------------------
+
+Test: 26
+Date: 04/30/2026
+Time: 21:19
+
+Results:
+python -m tests.test_features
+Feature Preparation Sniff Test
+
+Selected features:
+   Crew  Length  Wingspan  Height  WingArea  MaxSpeed  AspectRatio  SizeIndex  NumberBuilt_log
+1     5   18.24     24.53    5.68     100.0     295.0     6.017209   447.4272         4.934474
+2     2   10.00     14.80    3.63      60.0     185.0     3.650667   148.0000         3.891820
+4     4   14.50     22.83    4.08      67.0     480.0     7.779237   331.0350         4.465908
+6     3   14.63     18.68    5.52      43.1     523.0     8.096111   273.2884         8.919854
+7     3   15.20     20.60    5.60      50.0     570.0     8.487200   313.1200         7.805067
+
+Target labels:
+1    Bomber
+2    Bomber
+4    Bomber
+6    Bomber
+7    Bomber
+Name: RoleClass, dtype: str
+
+Feature columns:
+['Crew', 'Length', 'Wingspan', 'Height', 'WingArea', 'MaxSpeed', 'AspectRatio', 'SizeIndex', 'NumberBuilt_log']
+
+Feature matrix shape:
+(201, 9)
+
+Target vector shape:
+(201,)
+
+Target counts:
+RoleClass
+Fighter    106
+Bomber      95
+Name: count, dtype: int64
+
+Missing values in X:
+Crew               0
+Length             0
+Wingspan           0
+Height             0
+WingArea           0
+MaxSpeed           0
+AspectRatio        0
+SizeIndex          0
+NumberBuilt_log    0
+dtype: int64
+
+Rows after feature filtering: 201
+
+
+--------------------------------------------------
+
